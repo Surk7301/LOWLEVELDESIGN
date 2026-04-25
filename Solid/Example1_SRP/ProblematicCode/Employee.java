@@ -1,4 +1,4 @@
-package Solid.Example1.ProblematicCode;
+package Solid.Example1_SRP.ProblematicCode;
 
 public class Employee {
     
@@ -12,17 +12,17 @@ public class Employee {
         this.address = address;
     }
 
-    public void printPerformanceReport(){
+    public void printPerformanceReport(){ // if the report format changes we might need to update this function
         //code to print performance report
         System.out.println("Performance report of employee: "+ name);
     }
 
-    public double computeSalary(){
+    public double computeSalary(){  // issue -- If the taxation changes we might need to update this function
         //code to compute salary
         return 1000.0;
     }
 
-    public void updateEmployeeData(){
+    public void updateEmployeeData(){ // if data base requirements change we need to change this function
         //code to update employee data
         System.out.println();
     }
@@ -34,4 +34,6 @@ public class Employee {
 }
 
 
-//Problem-- this class trying to do too many things
+//Problem-- this class trying to do too many things, there are too many reason to update the code preent in the class. Tis violates SRP.
+
+//SRP states that,there should one and only one reason to change the piece of code
